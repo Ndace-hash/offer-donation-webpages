@@ -3,6 +3,7 @@
     :type="type"
     class="btn"
     :style="{ 'background-color': color, color: fontColor }"
+    v-on:click="$emit('clickHandler')"
   >
     <i :class="icon"></i>
     {{ text }}

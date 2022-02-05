@@ -1,18 +1,19 @@
 <template>
   <div class="container-md-fluid">
     <Header />
-    <Login />
+    <router-view/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "./components/header";
-import Login from "./components/login";
+import Footer from "./components/footer";
 export default {
   name: "App",
   components: {
     Header,
-    Login,
+    Footer,
   },
 };
 </script>

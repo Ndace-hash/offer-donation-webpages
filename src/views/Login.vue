@@ -1,9 +1,9 @@
 <template>
   <div class="form-wrapper">
     <form>
-      <Input name="Username" placeHolder="enter username..." type="text" />
-      <Input name="Password" placeHolder="enter password..." type="password" />
-      <Button text="Login" color="rgba(0, 0, 0, 0.6)" fontColor="white" />
+      <Input name="Username" placeHolder="enter username..." type="text" v-model="username"/>
+      <Input name="Password" placeHolder="enter password..." type="password" v-model="password"/>
+      <Button text="Login" type="button" color="rgba(0, 0, 0, 0.6)" fontColor="white" v-on:clickHandler="signIn"/>
       <div class="register">
         <p>Are you new here? <a href="#" class="btn">Register</a></p>
       </div>
@@ -12,14 +12,26 @@
 </template>
 
 <script>
-import Input from "./form-input";
-import Button from "./utils/button";
+import Input from "../components/form-input";
+import Button from "../components/utils/button";
 export default {
   name: "app-form",
+  data(){
+    return {
+      username:'',
+      password:''
+    }
+  },
   components: {
     Input,
     Button,
   },
+  methods:{
+    signIn(){
+      console.log(this.username)
+      console.log(this.password)
+    }
+  }
 };
 </script>
 

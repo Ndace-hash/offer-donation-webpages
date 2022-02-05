@@ -2,10 +2,10 @@
   <div class="head-container">
     <div class="logo fw-bold p-0 fs-3">LOGO</div>
     <nav>
-      <li class="nav-item"><a href="#" class="nav-link">home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">donations</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">about us</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">sign in</a></li>
+      <li class="nav-item"><router-link to="/" class="nav-link">home</router-link></li>
+      <li class="nav-item"><router-link to="/donations" class="nav-link">donations</router-link></li>
+      <li class="nav-item"><router-link to="/about" class="nav-link">about us</router-link></li>
+      <li class="nav-item"><router-link to="/login" class="nav-link">sign in</router-link></li>
     </nav>
   </div>
 </template>

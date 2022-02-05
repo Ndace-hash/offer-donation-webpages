@@ -6,7 +6,8 @@
       :id="name"
       :placeholder="placeHolder"
       class="input"
-      v-model="input"
+      :value="value"
+      @input="$emit('input',$event.target.value)"
     />
   </div>
 </template>
@@ -23,6 +24,7 @@ export default {
     name: String,
     type: String,
     placeHolder: String,
+    value:String,
   },
 };
 </script>
