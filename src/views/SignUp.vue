@@ -1,9 +1,25 @@
 <template>
   <div class="form-wrapper">
     <form>
-      <Input name="Username" placeHolder="enter username..." type="text" v-model="username"/>
-      <Input name="Password" placeHolder="enter password..." type="password" v-model="password"/>
-      <Button text="Login" type="button" color="rgba(0, 0, 0, 0.6)" fontColor="white" v-on:clickHandler="signIn"/>
+      <Input
+        name="Username"
+        placeHolder="enter username..."
+        type="text"
+        v-model="username"
+      />
+      <Input
+        name="Password"
+        placeHolder="enter password..."
+        type="password"
+        v-model="password"
+      />
+      <Button
+        text="Login"
+        type="button"
+        color="rgba(0, 0, 0, 0.6)"
+        fontColor="white"
+        v-on:clickHandler="signIn"
+      />
       <div class="register">
         <p>Are you new here? <a href="#" class="btn">Register</a></p>
       </div>
@@ -16,22 +32,22 @@ import Input from "../components/form-input";
 import Button from "../components/utils/button";
 export default {
   name: "app-form",
-  data(){
+  data() {
     return {
-      username:'',
-      password:''
-    }
+      username: "",
+      password: "",
+    };
   },
   components: {
     Input,
     Button,
   },
-  methods:{
-    signIn(){
-      console.log(this.username)
-      console.log(this.password)
-    }
-  }
+  methods: {
+    signIn() {
+      console.log(this.username);
+      console.log(this.password);
+    },
+  },
 };
 </script>
 
@@ -39,13 +55,16 @@ export default {
 .form-wrapper {
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-image: url(../assets/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-blend-mode: overlay;
   height: 100vh;
   width: 100%;
 }
 form {
-  background-color: sienna;
+  background-color: var(--primary-clr);
   width: 100%;
   max-width: 500px;
   margin: 2rem auto;

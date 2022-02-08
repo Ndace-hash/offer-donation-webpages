@@ -1,5 +1,5 @@
 <template>
-  <div class="input">
+  <div class="input-wrapper">
     <label :for="name" class="label">{{ name }}</label>
     <input
       :type="type"
@@ -7,7 +7,7 @@
       :placeholder="placeHolder"
       class="input"
       :value="value"
-      @input="$emit('input',$event.target.value)"
+      @input="$emit('input', $event.target.value)"
     />
   </div>
 </template>
@@ -24,13 +24,13 @@ export default {
     name: String,
     type: String,
     placeHolder: String,
-    value:String,
+    value: String,
   },
 };
 </script>
 
 <style scoped>
-.input {
+.input-wrapper {
   margin: 0.5rem 0;
 }
 .label {
@@ -46,11 +46,13 @@ export default {
   display: block;
   outline: none;
   border-radius: 5px;
+  width: 90%;
   max-width: 100%;
   font-size: 1rem;
   font-weight: 500;
   color: hsla(0, 50%, 0%, 0.6);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
+  background-color: rgb(201, 187, 151);
 }
 .input::placeholder {
   font-size: 1rem;

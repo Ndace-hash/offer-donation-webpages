@@ -1,7 +1,7 @@
 <template>
-  <div class="container-md-fluid">
-    <Header />
-    <router-view/>
+  <div class="container--md-fluid main">
+    <Header class="header" />
+    <router-view />
     <Footer />
   </div>
 </template>
@@ -22,6 +22,13 @@ export default {
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
+.main {
+  overflow-x: hidden;
+}
+:root {
+  --primary-clr: rgb(197, 135, 20);
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -29,5 +36,6 @@ export default {
   width: 100%;
   height: 60px;
   z-index: 2;
+  background: var(--primary-clr);
 }
 </style>
