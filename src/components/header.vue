@@ -1,21 +1,23 @@
 <template>
   <div class="head-container">
-    <div class="logo fw-bold p-0 fs-3">LOGO</div>
-    <nav>
-      <li class="nav-item">
-        <router-link to="/" class="nav-link">home</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/donation" class="nav-link">donations</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/about" class="nav-link">about us</router-link>
-      </li>
-      <li class="nav-item">
-        <button class="login" @click="showModal">sign in</button>
-      </li>
-    </nav>
-    <Modal v-show="modalVisible" @close-modal="closeModal" />
+    <div class="container-md">
+      <div class="logo fw-bold p-0 fs-3">.offer</div>
+      <nav>
+        <li class="nav-item">
+          <router-link to="/" class="nav-link">home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/donation" class="nav-link">donations</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/about" class="nav-link">about us</router-link>
+        </li>
+        <li class="nav-item">
+          <button class="login" @click="showModal">sign in</button>
+        </li>
+      </nav>
+      <Modal v-show="modalVisible" @close-modal="closeModal" />
+    </div>
   </div>
 </template>
 
@@ -34,9 +36,11 @@ export default {
   methods: {
     showModal() {
       this.modalVisible = true;
+      document.body.classList.add("no-scroll");
     },
     closeModal() {
       this.modalVisible = false;
+      document.body.classList.remove("no-scroll");
     },
   },
 };
@@ -46,9 +50,25 @@ export default {
 .head-container {
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 60px;
+}
+.container-md {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 430px) {
+  .head-container {
+    height: 80px;
+  }
+  .container-md {
+    flex-direction: column;
+  }
+  .login {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+  }
 }
 .logo {
   color: white;

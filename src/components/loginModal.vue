@@ -1,5 +1,6 @@
 <template>
-  <div class="modal-bg" @click="close">
+  <div class="modal-wrapper">
+    <div class="modal-bg" @click="close"></div>
     <div class="modal-container">
       <div class="modal-header">
         <h2>Login</h2>
@@ -32,7 +33,9 @@
       <div class="modal-footer">
         <p>
           Are you new here?
-          <router-link to="/signup" class="btn">Register</router-link>
+          <router-link to="/signup">
+            <button class="btn" @click="close">Register</button>
+          </router-link>
         </p>
       </div>
     </div>
@@ -67,15 +70,20 @@ export default {
 </script>
 
 <style scoped>
-.modal-bg {
+.modal-wrapper {
   position: absolute;
   inset: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.289);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+.modal-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.289);
   transition: all 400ms ease-in;
 }
 .modal-container {
@@ -98,5 +106,12 @@ export default {
 }
 .btn {
   border: 2px solid var(--primary-clr);
+
+  text-decoration: none;
+  color: var(--primary-clr);
+  font-weight: 700;
+}
+.btn:is(:hover, :focus) {
+  color: var(--primary-clr);
 }
 </style>
